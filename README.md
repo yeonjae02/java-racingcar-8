@@ -14,11 +14,11 @@
 ### 🔎 입력 유효성 검증 ```RacingCarInputChecker```
 - 입력된 문자열에서 쉼표를 이용해 이름을 구분한다.
 - 이름의 경우 5자 이하만 가능하며 그렇지 않을 경우 ```IllegalArgumentException```을 발생시킨다.
-- 게임을 시도할 횟수를 검증한다. 이때 0 이하의 수일 경우 ```IllegalArgumentException```을 발생시킨다.
+- 게임을 시도할 횟수를 검증한다. 이때 1 이상의 정수가 아닐 경우 ```IllegalArgumentException```을 발생시킨다.
 
 ### 🚗 자동차  ```Car```
-- String name과 int postion을 상태로 가진다.
-- move() : 0~9 사이 값을 받아 4 이상이면 postion을 1만큼 증가시킨다.
+- String name과 int position을 상태로 가진다.
+- move() : 0~9 사이 값을 받아 4 이상이면 position을 1만큼 증가시킨다.
 
 ### 💡 게임 진행 ```RacingCarGame```
 #### 🏃전진
