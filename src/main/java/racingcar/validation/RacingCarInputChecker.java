@@ -9,6 +9,12 @@ public class RacingCarInputChecker {
         return List.of(names);
     }
 
+    public int getPlayCount(String input) {
+        int playCount = parsePlayCount(input);
+        validatePlayCount(playCount);
+        return playCount;
+    }
+
     private void validatePlayerNames(String[] strings) {
         for (String name : strings) {
             validateName(name);
@@ -23,5 +29,19 @@ public class RacingCarInputChecker {
 
     private String[] splitString(String input) {
         return input.split(",");
+    }
+
+    private int parsePlayCount(String input) {
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("입력된 시도 횟수가 정수가 아닙니다.");
+        }
+    }
+
+    private void validatePlayCount(int playCount) {
+        if (playCount <= 0) {
+            throw new IllegalArgumentException("시도 횟수는 0 이하일 수 없습니다.");
+        }
     }
 }
