@@ -29,4 +29,29 @@ public class RacingCarGame {
     public List<Car> getCars() {
         return cars;
     }
+
+    public List<Car> getWinners() {
+        int maxValue = getMaxPosition();
+        return getPositionCars(maxValue);
+    }
+
+    private List<Car> getPositionCars(int maxValue) {
+        List<Car> winners = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getPosition() == maxValue) {
+                winners.add(car);
+            }
+        }
+        return winners;
+    }
+
+    private int getMaxPosition() {
+        int maxPosition = 0;
+        for (Car car : this.cars) {
+            if (car.getPosition() > maxPosition) {
+                maxPosition = car.getPosition();
+            }
+        }
+        return maxPosition;
+    }
 }
