@@ -21,7 +21,6 @@ public class Car {
     public void move(int randomValue) {
         if (isRandomValueMoreThan4(randomValue))
             position++;
-
     }
 
     private boolean isRandomValueMoreThan4(int randomValue ) {
