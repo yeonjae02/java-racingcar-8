@@ -28,7 +28,7 @@ public class RacingCarInputChecker {
     }
 
     private String[] splitString(String input) {
-        return input.split(",");
+        return input.split(",", -1);
     }
 
     private int parsePlayCount(String input) {

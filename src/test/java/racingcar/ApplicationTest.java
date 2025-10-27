@@ -32,6 +32,14 @@ class ApplicationTest extends NsTest {
     }
 
     @Test
+    void 예외_테스트_이름공백포함() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("pobi,,,", "3"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    @Test
     void 예외_테스트_이름미입력() {
         assertSimpleTest(() ->
                 assertThatThrownBy(() -> runException("", "3"))
